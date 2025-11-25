@@ -37,9 +37,8 @@ const ChatSidebar: React.FC = () => {
       <List
         itemLayout="horizontal"
         dataSource={dummyChats}
-        split={false} // removes borders
         renderItem={(chat: ChatItem) => (
-          <List.Item style={{ padding: 0 }}>
+          <List.Item>
             {" "}
             {/* remove List.Item padding */}
             <ChatCard chat={chat} />

@@ -1,9 +1,13 @@
 .chat-card {
   display: flex;
-  padding: 12px 8px;
+  padding: 10px;
   cursor: pointer;
-  border-bottom: 1px solid #f1f1f1;
   font-family: "Roboto", sans-serif; /* <-- Add Roboto here */
+  &:hover {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    // padding: 20px;
+  }
 
   .ant-avatar {
     width: 50px;
@@ -25,6 +29,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      .date-dropdown-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .anticon-down {
+          color: #838383;
+          width: 13px;
+          height: 13px;
+        }
+      }
 
       .name {
         color: var(--text-primary);
@@ -40,24 +54,26 @@
 
       .date {
         font-size: 12px;
-        color: gray;
+        color: #838383;
         font-family: "Roboto", sans-serif;
       }
     }
 
     .message-section {
       margin-top: 4px;
+      font-family: "Roboto", sans-serif;
 
       .message-time-row {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        font-family: "Roboto", sans-serif;
+        // align-items: center;
+
         .message {
           font-size: 14px;
-          color: #555;
+          color: #7a7a7a;
           font-family: "Roboto", sans-serif;
+          font-size: 16px;
         }
 
         .time {
@@ -67,7 +83,38 @@
           white-space: nowrap;
           font-family: "Roboto", sans-serif;
         }
+        .time-container {
+          display: flex;
+          justify-content: end;
+        }
       }
+    }
+  }
+}
+.dropdown-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+
+  .dropdown-icon {
+    color: #7a7a7a;
+    font-size: 14px;
+  }
+  .anticon-pushpin {
+    color: #377def;
+  }
+  .anticon-folder {
+    color: #377def;
+  }
+  .anticon-block {
+    color: #ff2324;
+  }
+  .anticon-delete {
+    color: #ff2324;
+    &:hover {
+      color: #ffffff;
     }
   }
 }

@@ -7,23 +7,26 @@
     margin-top: 20px;
     color: white;
     display: flex;
+    flex-direction: column;
+    align-items: center; // center icons horizontally
     gap: 20px;
     background-color: #4d72f8;
-    .phone-icon-wrapper {
-      font-size: 15px;
-      padding-left: 20px;
-      .phone-icon {
-        font-size: 38px;
-        margin-bottom: 10px;
+
+    .icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .icon {
+        font-size: 38px; // make icons equal size
+        margin-bottom: 5px;
       }
-    }
-    .message-icon-wrapper {
-      font-size: 15px;
-      padding-left: 25px;
-      width: 85px !important;
-    }
-    .message-icon {
-      font-size: 38px;
+
+      .icon-text {
+        font-size: 14px;
+      }
     }
   }
 }
