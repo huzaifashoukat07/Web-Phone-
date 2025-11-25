@@ -1,0 +1,20 @@
+.other-device-card {
+  display: flex;
+  padding: 10px 0 0 0px;
+  .ant-avatar {
+    margin-top: 15px;
+  }
+  .ant-flex-align-stretch {
+    padding: 10px 0 0 10px;
+    .ant-typography {
+      margin-bottom: 0;
+    }
+    .last-active {
+      color: #606060cc;
+    }
+  }
+  .device-name {
+  }
+  .last-active {
+  }
+}

@@ -1,0 +1,52 @@
+.calls-list-wrapper {
+  background-color: white;
+  width: 420px;
+  border-right: 1px solid #eee;
+  padding: 16px;
+  padding-left: 20px;
+  padding-right: 10px;
+  .calls-tabs-wrapper {
+    flex: 1;
+    height: 2px;
+    height: auto;
+
+    .ant-tabs-tab {
+      padding: 10px 40px;
+    }
+    .ant-tabs-nav::before {
+      border-bottom: 3px solid #e7e3e3;
+      width: 251.23px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .ant-tabs-nav .ant-tabs-ink-bar {
+      height: 2.8px;
+      border-radius: 20px;
+    }
+  }
+
+  .call-text-wrapper {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .search-bar {
+    margin-bottom: 12px;
+    .ant-input-affix-wrapper {
+      width: 10px;
+    }
+  }
+  .message-icon-callList {
+    font-size: 16px;
+    color: #1890ff;
+    margin-right: 8px;
+  }
+  .call-tab-list {
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+
+    // height: 100%;
+  }
+}

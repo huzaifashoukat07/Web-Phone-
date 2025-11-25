@@ -1,0 +1,16 @@
+.numpad-container {
+  font-family: century-gothic, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  .numpad-button {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    background-color: #0000001a;
+    font-weight: bold;
+  }
+}

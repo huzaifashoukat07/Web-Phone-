@@ -1,0 +1,67 @@
+.callcard {
+  display: flex;
+  border-bottom: #1118271a 1px solid;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  .ant-avatar {
+    background-image: linear-gradient(#c435c8, #5e68f0);
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+  .call-tittle-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .callcard-name {
+    display: flex;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111827;
+    .callcard-isFree {
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: white;
+      background-color: #756aec;
+      padding: 2px 4px;
+    }
+  }
+  .callcard-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 180px;
+    font-weight: 400;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6b7280;
+  }
+}
+.missedCall {
+  color: red;
+}
+.messageIcon-callcard {
+  margin-left: auto;
+  // display: flex;
+  // gap: 10px;
+  font-size: 18px;
+  color: #756aec;
+  .phoneIcon-callcard {
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+  }
+  .phoneIcon-callcard:hover {
+    background-color: #1118271a;
+    transition: background-color 0.5s ease-in-out;
+  }
+}

@@ -1,0 +1,98 @@
+.dialer-wrapper {
+  background-color: white;
+  flex: 1;
+  padding: 24px;
+
+  .dialer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    .ant-select {
+      .ant-select-selector {
+        padding: 0 20px 0 0;
+        font-size: 25px;
+        .ant-select-selection-item {
+          font-weight: bold;
+        }
+      }
+      .ant-select-arrow {
+        font-size: large !important;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .numpad-wrapper {
+    display: Flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+  }
+  .calls-button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+
+    .call-Button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center !important;
+      margin-top: 20px;
+      width: 120px !important;
+      height: 50px !important;
+      font-size: 17px !important;
+      background-color: white;
+      padding: 2px 8px;
+      font-weight: 500;
+      color: #6765ee;
+      border: #6765ee 1px solid;
+      border-radius: 5px;
+      align-items: center;
+      line-height: 0.9;
+      margin-top: 20px;
+
+      .cost-call-button {
+        font-size: 10px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+      }
+    }
+    .efone-call-Button {
+      margin-top: 20px;
+      width: 120px !important;
+      height: 50px !important;
+      font-size: 17px !important;
+      background-color: #6765ee;
+      font-weight: 500;
+      color: white;
+      border: #6765ee 1px solid;
+      border-radius: 5px;
+      align-items: center;
+
+      margin-top: 20px;
+    }
+  }
+
+  .input-number-wrapper {
+    width: 60%;
+    padding: 10px 10px;
+
+    gap: 4px;
+
+    .ant-input {
+      font-size: 16px;
+
+      width: 100%;
+    }
+
+    .ant-input::placeholder {
+      color: #00000080;
+      opacity: 1;
+    }
+    .search-icon {
+      color: #00000080;
+      margin-top: 3px;
+      margin-right: 1px;
+    }
+  }
+}

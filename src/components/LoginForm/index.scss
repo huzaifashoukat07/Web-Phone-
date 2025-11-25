@@ -1,0 +1,63 @@
+.label-container {
+  color: #7e859b;
+  font-size: 15px;
+  padding-left: 55px;
+  padding-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 4px;
+  padding: 0 50px 0 50px;
+  font-family: " Century Gothic", sans-serif;
+  .ant-divider {
+    display: flex;
+    justify-content: center;
+  }
+  .ant-divider-inner-text {
+    color: #7e859b;
+    font-size: 15px;
+  }
+  .ant-divider::before {
+    width: 230px;
+    border: 0.5px solid #f7f7f7;
+  }
+  .ant-divider::after {
+    width: 230px;
+    border: 0.5px solid #f7f7f7;
+  }
+  .ant-input {
+    padding: 12px;
+    border-radius: inherit;
+    height: 40px;
+    margin-bottom: 45px;
+  }
+
+  .continue-btn {
+    background-image: linear-gradient(#d92cc1, #4d72f8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 40px;
+    font-weight: bold;
+    .span {
+      margin: 0;
+    }
+    .ant-spin-dot-spin {
+      color: white;
+    }
+  }
+
+  .phone-btn {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 40px;
+    font-weight: bold;
+  }
+}

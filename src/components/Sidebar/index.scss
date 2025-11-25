@@ -1,0 +1,29 @@
+.ant-layout-sider-children {
+  width: 85px;
+  background: #4d72f8;
+
+  .sidebar-wrapper {
+    width: 80%;
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    background-color: #4d72f8;
+    .phone-icon-wrapper {
+      font-size: 15px;
+      padding-left: 20px;
+      .phone-icon {
+        font-size: 38px;
+        margin-bottom: 10px;
+      }
+    }
+    .message-icon-wrapper {
+      font-size: 15px;
+      padding-left: 25px;
+      width: 85px !important;
+    }
+    .message-icon {
+      font-size: 38px;
+    }
+  }
+}

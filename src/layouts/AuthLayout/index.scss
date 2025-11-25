@@ -1,0 +1,52 @@
+.auth-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding-left: 100px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding-left: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.left-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding-left: 60px;
+}
+
+.title-container {
+  width: 100%;
+  padding: 0 2rem 2rem 2rem;
+
+  .welcome-title {
+    font-weight: bold;
+    color: #4d4d4d;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px 50px 55px;
+
+    font-family: "Roboto", sans-serif;
+
+    .efone-container {
+      padding-top: 5px;
+      font-size: 2rem;
+      .efone-container1 {
+        color: #4285f4;
+      }
+    }
+  }
+}
+.authPage-backgroundImage {
+  width: 50%;
+
+  @media (max-width: 1024px) {
+    display: none; // hide background on smaller screens
+  }
+}
