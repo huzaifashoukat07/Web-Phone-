@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
-import ChatCard from "../../../components/chatCard";
+import ChatCard from "../../../components/Chat/chatCard";
 import { dummyChats, type ChatItem } from "../../../data/interface/dummychat";
 import { Input, Divider, Radio, List } from "antd";
 import { SearchOutlined, PlusOutlined } from "@ant-design/icons";
@@ -33,18 +33,19 @@ const ChatSidebar: React.FC = () => {
         </div>
         <Divider />
       </div>
-
-      <List
-        itemLayout="horizontal"
-        dataSource={dummyChats}
-        renderItem={(chat: ChatItem) => (
-          <List.Item>
-            {" "}
-            {/* remove List.Item padding */}
-            <ChatCard chat={chat} />
-          </List.Item>
-        )}
-      />
+      <div className="list-container">
+        <List
+          itemLayout="horizontal"
+          dataSource={dummyChats}
+          renderItem={(chat: ChatItem) => (
+            <List.Item>
+              {" "}
+              {/* remove List.Item padding */}
+              <ChatCard chat={chat} />
+            </List.Item>
+          )}
+        />
+      </div>
     </div>
   );
 };

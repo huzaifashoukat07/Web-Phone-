@@ -1,5 +1,5 @@
 import React from "react";
-import type { ChatItem } from "../../data/interface/dummychat";
+import type { ChatItem } from "../../../data/interface/dummychat";
 import { Avatar, Typography, Dropdown, Space } from "antd";
 import type { MenuProps } from "antd";
 import {

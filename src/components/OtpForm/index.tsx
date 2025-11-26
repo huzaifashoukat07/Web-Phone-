@@ -57,7 +57,7 @@ const Otp: React.FC = () => {
       localStorage.setItem("refresh_token", data.refresh.token);
       localStorage.setItem("user_id", data.access.user_id);
       toast.success(response.data.message);
-      navigate("/dashboard/calls", { replace: true });
+      navigate("/calls", { replace: true });
     } catch (error: any) {
       let errorMessage = "Invalid OTP";
       if (error.status === 401 && error?.response?.data.allDevices) {
