@@ -1,5 +1,5 @@
 import React from "react";
-import type { ChatItem } from "../../../data/interface/dummychat";
+import type { Chat } from "../../../redux/slices/chatSlice";
 import { Avatar, Typography, Dropdown, Space } from "antd";
 import type { MenuProps } from "antd";
 import {
@@ -13,7 +13,7 @@ import {
 import "./index.scss";
 
 interface ChatCardProps {
-  chat: ChatItem;
+  chat: Chat;
 }
 
 const { Text, Title } = Typography;
@@ -26,6 +26,7 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
       .join("")
       .toUpperCase();
   };
+
   const items: MenuProps["items"] = [
     {
       label: (
@@ -48,6 +49,7 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
       key: "1",
     },
     { type: "divider" },
+
     {
       label: (
         <div className="dropdown-item">
@@ -85,13 +87,19 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
 
   return (
     <div className="chat-card">
-      <Avatar className="avatar">{avatarWords(chat.fullName)}</Avatar>
+      <Avatar className="avatar">
+        {avatarWords(chat?.sourceUserName ?? "")}
+      </Avatar>
 
       <div className="content">
         <div className="top-row">
-          <Title className="name">{chat.fullName}</Title>
+          <Title className="name">
+            {chat?.sourceUserName || chat?.groupName}
+          </Title>
+
           <div className="date-dropdown-container">
-            <Text className="date">{chat.date}</Text>
+            <Text className="date">{chat?.date}</Text>
+
             <Dropdown menu={{ items }} trigger={["click"]}>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
@@ -104,7 +112,10 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
 
         <div className="message-section">
           <div className="message-time-row">
-            <Text className="message">{chat.lastMessage}</Text>
+            <Text className="message" s>
+              {chat.lastMessage}
+            </Text>
+
             <div className="time-container">
               <Text className="time">{chat.time}</Text>
             </div>

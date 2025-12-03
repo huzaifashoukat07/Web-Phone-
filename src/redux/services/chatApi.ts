@@ -1,4 +1,5 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const chatApi = createApi({
   reducerPath: "chatApi",
@@ -12,7 +13,7 @@ export const chatApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getChats: builder.query<unknown, any>({
+    getChats: builder.query<any, Record<string>>({
       query: (params) => ({ url: "chat/new-conversation-list", params }),
     }),
   }),

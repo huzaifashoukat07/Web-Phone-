@@ -46,9 +46,9 @@
         font-weight: 400;
         margin: 0;
         max-width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
         font-family: "Roboto", sans-serif;
       }
 
@@ -74,6 +74,13 @@
           color: #7a7a7a;
           font-family: "Roboto", sans-serif;
           font-size: 16px;
+          white-space: nowrap; // required
+          overflow: hidden; // required
+          text-overflow: ellipsis; // required
+          display: block; // recommended (makes ellipsis more reliable)
+          max-width: 50%;
+          flex: 1; // allow message text to take remaining space
+          // margin-right: 8px;
         }
 
         .time {

@@ -1,7 +1,9 @@
 export interface ChatItem {
   id: number;
-  fullName: string;
-  phoneNumber: string;
+  sourceUserName?: string;
+  sourceNumber?: string;
+  fullName?: string;
+  phoneNumber?: string;
   lastMessage: string;
   date: string; // YYYY-MM-DD
   time: string; // HH:MM AM/PM

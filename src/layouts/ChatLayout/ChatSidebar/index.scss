@@ -2,6 +2,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  max-width: 449.6px;
   .main-title-container {
     width: 449.6px;
     border-right: 1px solid #eee;
@@ -69,6 +70,7 @@
     // margin: 0 10px;
     flex: 1;
     overflow-y: auto;
+    max-width: 449.6px;
     .ant-list-items {
       display: flex;
       flex-direction: column;
