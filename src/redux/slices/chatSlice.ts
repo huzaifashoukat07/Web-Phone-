@@ -17,6 +17,11 @@ export interface Chat {
   isUnread?: boolean;
   isArchived?: string;
   [key: string]: unknown;
+  lastUpdateToSort?: string;
+  isGroup?: boolean;
+  isBroadcast?: boolean;
+  groupImage?: string;
+  userProfileImage?: string;
 }
 
 interface ChatState {

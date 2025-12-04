@@ -1,9 +1,10 @@
 import React from "react";
 import ChatHeader from "../../../components/Chat/ChatHeader";
+import "./index.scss";
 
 const ChatRightSection: React.FC = () => {
   return (
-    <div>
+    <div className="chat-right-section">
       <ChatHeader />
     </div>
   );

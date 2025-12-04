@@ -1,0 +1,55 @@
+.chatBox-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 70px;
+  padding: 0px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  .avatar-chat-box {
+    .ant-avatar {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+  }
+  .header-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .header-name {
+      margin-bottom: 0;
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+    }
+    .header-group-members {
+      margin-top: 3px;
+      font-size: 14px;
+      color: #7a7a7a;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 0;
+    }
+  }
+  .button-wrapper {
+    // width: 100%;
+    margin-left: auto;
+
+    .call-button {
+      height: 40px;
+      width: 40px;
+      //   margin-left: 50px;
+      border: none;
+      background-color: #5e68f0;
+      color: #ffffff;
+      border-radius: 20%;
+      &:hover {
+        background-color: #4096ff;
+      }
+      .phone-icon {
+        font-size: 16px;
+      }
+    }
+  }
+}

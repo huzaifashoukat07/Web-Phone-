@@ -10,6 +10,8 @@ import {
   MutedOutlined,
   PushpinOutlined,
 } from "@ant-design/icons";
+import { BsMegaphoneFill, BsPeopleFill } from "react-icons/bs";
+import moment from "moment";
 import "./index.scss";
 
 interface ChatCardProps {
@@ -19,14 +21,6 @@ interface ChatCardProps {
 const { Text, Title } = Typography;
 
 const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
-  const avatarWords = (name: string) => {
-    const parts = name.split(" ");
-    return parts
-      .map((w) => w[0])
-      .join("")
-      .toUpperCase();
-  };
-
   const items: MenuProps["items"] = [
     {
       label: (
@@ -85,10 +79,23 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
     },
   ];
 
+  const date = chat?.lastUpdateToSort;
+
   return (
     <div className="chat-card">
-      <Avatar className="avatar">
-        {avatarWords(chat?.sourceUserName ?? "")}
+      <Avatar
+        className="avatar"
+        src={chat.isGroup ? chat.groupImage : chat.userProfileImage}
+      >
+        {chat.isBroadcast ? (
+          <BsMegaphoneFill size={15} />
+        ) : chat.groupName ? (
+          <BsPeopleFill size={15} />
+        ) : chat.sourceUserName ? (
+          chat.sourceUserName.charAt(0).toUpperCase()
+        ) : (
+          "?"
+        )}
       </Avatar>
 
       <div className="content">
@@ -98,7 +105,7 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
           </Title>
 
           <div className="date-dropdown-container">
-            <Text className="date">{chat?.date}</Text>
+            <Text className="date">{moment(date).format("YYYY-MM-DD")}</Text>
 
             <Dropdown menu={{ items }} trigger={["click"]}>
               <a onClick={(e) => e.preventDefault()}>
@@ -117,7 +124,7 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
             </Text>
 
             <div className="time-container">
-              <Text className="time">{chat.time}</Text>
+              <Text className="time">{moment(date).format("hh:mm A")}</Text>
             </div>
           </div>
         </div>
