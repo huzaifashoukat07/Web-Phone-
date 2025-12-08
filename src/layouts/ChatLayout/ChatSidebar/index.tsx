@@ -17,20 +17,45 @@ const ChatSidebar: React.FC = () => {
   const { data, isLoading } = useGetChatsQuery({});
   const { chats } = useSelector((state: RootState) => state.chat);
   const [tabPlacement, setTabPlacement] =
-    useState<TabsProps["tabPlacement"]>("start");
+    useState<TabsProps["tabPlacement"]>("all");
 
   const changeTabPlacement = (e: RadioChangeEvent) => {
     setTabPlacement(e.target.value);
   };
 
+  const filteredChats = chats?.filter((chat: any) => {
+    if (tabPlacement === "all") return true;
+    if (tabPlacement === "group") return chat.isGroup === true;
+    if (tabPlacement === "broadcast") return chat.isBroadCast === true;
+
+    return true;
+  });
+
+  // const [searchQuery, setSearchQuery] = useState<string>("");
+  // const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const query = e.target.value;
+  //   setSearchQuery(query);
+  // };
+
+  // const filteredChatsBySearch = searchChats(searchQuery);
+
+  // useEffect(() => {
+  //   const searchChats = filteredChats?.filter((chat: any) =>
+  //     chat.conversationName.toLowerCase().includes(searchQuery.toLowerCase())
+  //   );
+
+  //   setSearchQuery(searchChats as any);
+  // }, [filteredChats, searchQuery]);
   useEffect(() => {
     if (data) {
       const chats = data?.newCnv?.docs?.[0]?.conversationList;
 
-      const simpleChats = chats.filter((item: any) => item?.isArchived === "2");
+      const simpleChats = chats?.filter(
+        (item: any) => item?.isArchived === "2"
+      );
       dispatch(setChat(simpleChats));
 
-      const archivedChats = chats.filter(
+      const archivedChats = chats?.filter(
         (item: any) => item?.isArchived === "1"
       );
       dispatch(setArchivedChats(archivedChats));
@@ -60,7 +85,7 @@ const ChatSidebar: React.FC = () => {
       <div className="list-container">
         <List
           itemLayout="horizontal"
-          dataSource={chats || []}
+          dataSource={filteredChats || []}
           loading={isLoading}
           style={{ overflowX: "hidden", maxWidth: 449.6 }}
           renderItem={(chat: any) => (

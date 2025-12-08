@@ -87,7 +87,7 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
         className="avatar"
         src={chat.isGroup ? chat.groupImage : chat.userProfileImage}
       >
-        {chat.isBroadcast ? (
+        {chat.isBroadCast ? (
           <BsMegaphoneFill size={15} />
         ) : chat.groupName ? (
           <BsPeopleFill size={15} />

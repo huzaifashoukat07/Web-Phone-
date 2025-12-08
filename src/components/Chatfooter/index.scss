@@ -1,0 +1,46 @@
+.chat-footer {
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  .chat-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    // line-height: 30px;
+    background: transparent;
+    // min-height: 28px;
+    max-height: 140px; // stops it from growing too tall
+    // overflow-y: auto; // no scroll
+  }
+  .chat-footer-buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    .chat-action-buttons {
+      display: flex;
+      gap: 10px;
+      font-size: 20px;
+      .action-button {
+        height: 35px;
+        width: 40px;
+        border: none;
+        background-color: #377def;
+        color: #eaf2fd;
+        border-radius: 10px;
+      }
+    }
+    .send-button {
+      padding: 0 15px;
+      background-color: #377def;
+      color: #eaf2fd;
+      border: none;
+      border-radius: 10px;
+    }
+  }
+}

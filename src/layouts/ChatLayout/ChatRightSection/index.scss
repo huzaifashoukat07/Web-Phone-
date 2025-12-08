@@ -1,6 +1,11 @@
 .chat-right-section {
   display: flex;
-  flex: 1;
+  // flex: 1;
   width: 100%;
   background-color: #ffffff;
+  flex-direction: column;
+  .chat-body {
+    display: flex;
+    flex: 1;
+  }
 }
