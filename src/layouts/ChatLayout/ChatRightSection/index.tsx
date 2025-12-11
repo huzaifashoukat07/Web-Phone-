@@ -1,6 +1,7 @@
 import React from "react";
 import ChatHeader from "../../../components/Chat/ChatHeader";
 import "./index.scss";
+
 import Chatfooter from "../../../components/Chatfooter";
 
 const ChatRightSection: React.FC = () => {

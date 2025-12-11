@@ -1,5 +1,5 @@
 import React from "react";
-import type { Chat } from "../../../redux/slices/chatSlice";
+import { setCurrentChat, type Chat } from "../../../redux/slices/chatSlice";
 import { Avatar, Typography, Dropdown, Space } from "antd";
 import type { MenuProps } from "antd";
 import {
@@ -11,6 +11,7 @@ import {
   PushpinOutlined,
 } from "@ant-design/icons";
 import { BsMegaphoneFill, BsPeopleFill } from "react-icons/bs";
+import { useAppDispatch } from "../../../redux/store";
 import moment from "moment";
 import "./index.scss";
 
@@ -21,6 +22,7 @@ interface ChatCardProps {
 const { Text, Title } = Typography;
 
 const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
+  const dispatch = useAppDispatch();
   const items: MenuProps["items"] = [
     {
       label: (
@@ -81,17 +83,31 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
 
   const date = chat?.lastUpdateToSort;
 
+  const showDetail = () => {
+    console.log("show detail");
+    // console.log(chat?._id);
+    // console.log(chat?.groupName || chat?.sourceUserName);
+    // if (chat?.isGroup) {
+    //   console.log("This is a group chat");
+    // } else if (chat?.isBroadCast) {
+    //   console.log("This is a broadcast chat");
+    // } else {
+    //   console.log("This is a simple chat");
+    // }
+    dispatch(setCurrentChat(chat));
+  };
+
   return (
-    <div className="chat-card">
+    <div className="chat-card" onClick={showDetail}>
       <Avatar
         className="avatar"
-        src={chat.isGroup ? chat.groupImage : chat.userProfileImage}
+        src={chat?.isGroup ? chat.groupImage : chat.userProfileImage}
       >
         {chat.isBroadCast ? (
           <BsMegaphoneFill size={15} />
         ) : chat.groupName ? (
           <BsPeopleFill size={15} />
-        ) : chat.sourceUserName ? (
+        ) : chat.secondUserName ? (
           chat.sourceUserName.charAt(0).toUpperCase()
         ) : (
           "?"
@@ -101,7 +117,7 @@ const ChatCard: React.FC<ChatCardProps> = ({ chat }) => {
       <div className="content">
         <div className="top-row">
           <Title className="name">
-            {chat?.sourceUserName || chat?.groupName}
+            {chat?.secondUserName || chat?.groupName}
           </Title>
 
           <div className="date-dropdown-container">
